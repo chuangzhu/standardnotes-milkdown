@@ -1,0 +1,8 @@
+{
+  "identifier": "localhost.milkdown.dev",
+  "name": "Milkdown - Development",
+  "content_type": "SN|Component",
+  "area": "editor-editor",
+  "version": "0.0.0",
+  "url": "http://localhost:3000/"
+}

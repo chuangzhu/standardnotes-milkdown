@@ -9,5 +9,13 @@
   "devDependencies": {
     "typescript": "^4.3.2",
     "vite": "^2.5.4"
+  },
+  "dependencies": {
+    "@milkdown/core": "^4.12.0",
+    "@milkdown/plugin-listener": "^4.12.0",
+    "@milkdown/preset-gfm": "^4.12.0",
+    "@milkdown/theme-nord": "^4.12.0",
+    "filesafe-js": "^1.0.4",
+    "sn-editor-kit": "^1.0.9"
   }
 }
