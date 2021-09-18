@@ -1,18 +1,26 @@
 import "./style.css";
+import "katex/dist/katex.min.css";
+import "material-icons/iconfont/material-icons.css";
+import "prismjs/themes/prism.css";
 import { EditorKit, EditorKitDelegate } from "sn-editor-kit";
 import { defaultValueCtx, Editor, rootCtx } from "@milkdown/core";
 import { gfm } from "@milkdown/preset-gfm";
 import { nord } from "@milkdown/theme-nord";
-import { listener, listenerCtx } from '@milkdown/plugin-listener';
+import { listener, listenerCtx } from "@milkdown/plugin-listener";
+import { tooltip } from "@milkdown/plugin-tooltip";
+import { slash } from "@milkdown/plugin-slash";
+import { history } from "@milkdown/plugin-history";
+import { clipboard } from "@milkdown/plugin-clipboard";
+import { emoji } from "@milkdown/plugin-emoji";
+import { prism } from "@milkdown/plugin-prism";
+import { math } from "@milkdown/plugin-math";
 
 class MilkdownEditor {
   editorKit: any;
   constructor() {
-    // Initialize an empty editor anyway (for browsers)
-    this.initMilkdown("");
     const delegate = new EditorKitDelegate({
       setEditorRawText: (text: string) => {
-        // Re-render the editor once SN give us text
+        // Render the editor once SN give us text
         this.initMilkdown(text);
       },
     });
@@ -29,13 +37,20 @@ class MilkdownEditor {
       .config((ctx) => {
         ctx.set(rootCtx, document.getElementById("app"));
         ctx.set(defaultValueCtx, defaultValue);
-          ctx.set(listenerCtx, {
-            markdown: [(get) => this.saveNote(get())],
-          });
+        ctx.set(listenerCtx, {
+          markdown: [(get) => this.saveNote(get())],
+        });
       })
       .use(nord)
       .use(gfm)
       .use(listener)
+      .use(math)
+      .use(slash)
+      .use(tooltip)
+      .use(history)
+      .use(emoji)
+      .use(clipboard)
+      .use(prism)
       .create();
   }
 
