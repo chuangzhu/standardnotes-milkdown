@@ -33,9 +33,11 @@ class MilkdownEditor {
   }
 
   initMilkdown(defaultValue: string) {
+    const app = document.getElementById("app")!;
+    app.innerHTML = "";
     Editor.make()
       .config((ctx) => {
-        ctx.set(rootCtx, document.getElementById("app"));
+        ctx.set(rootCtx, app);
         ctx.set(defaultValueCtx, defaultValue);
         ctx.set(listenerCtx, {
           markdown: [(get) => this.saveNote(get())],
