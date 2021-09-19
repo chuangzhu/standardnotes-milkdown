@@ -1,11 +1,11 @@
-import "./style.css";
+import "sn-stylekit/dist/stylekit.css"
 import "katex/dist/katex.min.css";
 import "material-icons/iconfont/material-icons.css";
 import "prismjs/themes/prism.css";
 import { EditorKit, EditorKitDelegate } from "sn-editor-kit";
 import { defaultValueCtx, Editor, rootCtx } from "@milkdown/core";
 import { gfm } from "@milkdown/preset-gfm";
-import { nord } from "@milkdown/theme-nord";
+import { sn } from "./theme-sn";
 import { listener, listenerCtx } from "@milkdown/plugin-listener";
 import { tooltip } from "@milkdown/plugin-tooltip";
 import { slash } from "@milkdown/plugin-slash";
@@ -43,7 +43,7 @@ class MilkdownEditor {
           markdown: [(get) => this.saveNote(get())],
         });
       })
-      .use(nord)
+      .use(sn)
       .use(gfm)
       .use(listener)
       .use(math)
@@ -68,4 +68,4 @@ class MilkdownEditor {
   }
 }
 
-new MilkdownEditor();
+document.addEventListener("DOMContentLoaded", () => new MilkdownEditor());

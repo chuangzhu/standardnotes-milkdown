@@ -1,7 +1,9 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@emotion/css': ^11.1.3
   '@milkdown/core': ^4.12.0
+  '@milkdown/design-system': ^4.12.0
   '@milkdown/plugin-clipboard': ^4.12.0
   '@milkdown/plugin-emoji': ^4.12.0
   '@milkdown/plugin-history': ^4.12.0
@@ -17,11 +19,14 @@ specifiers:
   material-icons: ^1.3.0
   prismjs: ^1.25.0
   sn-editor-kit: ^1.0.9
+  sn-stylekit: ^5.2.8
   typescript: ^4.3.2
   vite: ^2.5.4
 
 dependencies:
+  '@emotion/css': 11.1.3
   '@milkdown/core': 4.12.0
+  '@milkdown/design-system': 4.12.0
   '@milkdown/plugin-clipboard': 4.12.0_@milkdown+core@4.12.0
   '@milkdown/plugin-emoji': 4.12.0_@milkdown+core@4.12.0
   '@milkdown/plugin-history': 4.12.0_@milkdown+core@4.12.0
@@ -37,6 +42,7 @@ dependencies:
   material-icons: 1.3.0
   prismjs: 1.25.0
   sn-editor-kit: 1.0.9
+  sn-stylekit: 5.2.8
 
 devDependencies:
   typescript: 4.4.3
@@ -481,6 +487,128 @@ packages:
     resolution: {integrity: sha512-HnUhk1Sy9IuKrxEMdIRCxpIqPw6BFsbYSEUO9p/hNw5sMld/+3OLMWQP80F8/db9qsv3qUjs7ZR5bS/R+iinXw==}
     dev: false
 
+  /@reach/auto-id/0.15.3:
+    resolution: {integrity: sha512-lbLUI9mrn74qVis141ib0Rsyhgk+gzUMtpplRmjy06cUWDFZyiBATNWMUxN5T+0fU4tpfgcjkAuPeTCCGThKtQ==}
+    peerDependencies:
+      react: ^16.8.0 || 17.x
+      react-dom: ^16.8.0 || 17.x
+    dependencies:
+      '@reach/utils': 0.15.3
+      tslib: 2.3.1
+    dev: false
+
+  /@reach/descendants/0.15.3:
+    resolution: {integrity: sha512-vuCBG7Uru6IEJ2wvTd7L2xumbYzv2UYBduZ0E1FEABqyUo78eTIZbRcwIN73IxMcivjWipBPlcLLkpFtJKMPew==}
+    peerDependencies:
+      react: ^16.8.0 || 17.x
+      react-dom: ^16.8.0 || 17.x
+    dependencies:
+      '@reach/utils': 0.15.3
+      tslib: 2.3.1
+    dev: false
+
+  /@reach/dropdown/0.15.3:
+    resolution: {integrity: sha512-nNBJnozc0M+x89dIjqaoQAoymrfYZmaIEJ1Ti3VIcodFh1JWrXsq1qAY10stlK4YRTX8UdXevzSt29bAHZ+pwg==}
+    peerDependencies:
+      react: ^16.8.0 || 17.x
+      react-dom: ^16.8.0 || 17.x
+    dependencies:
+      '@reach/auto-id': 0.15.3
+      '@reach/descendants': 0.15.3
+      '@reach/popover': 0.15.3
+      '@reach/utils': 0.15.3
+      tslib: 2.3.1
+    dev: false
+
+  /@reach/listbox/0.15.3:
+    resolution: {integrity: sha512-li2mzK/gTrpnw2aJuDre6At1FEIZinmrm7aMqwApVy71FZcYP5idIzrc7elPufujPgQ94fF0w66Auf0xqlOLNg==}
+    peerDependencies:
+      react: ^16.8.0 || 17.x
+      react-dom: ^16.8.0 || 17.x
+    dependencies:
+      '@reach/auto-id': 0.15.3
+      '@reach/descendants': 0.15.3
+      '@reach/machine': 0.15.3
+      '@reach/popover': 0.15.3
+      '@reach/utils': 0.15.3
+      prop-types: 15.7.2
+    dev: false
+
+  /@reach/machine/0.15.3:
+    resolution: {integrity: sha512-bb87/dSMFlTvGBtShaLiXqokuW55KavgtqmIvexHLcFT5UtxfCBOT3ncE4V6XfEcxRlljsC1iiWl2WkYXP5Qhw==}
+    peerDependencies:
+      react: ^16.8.0 || 17.x
+      react-dom: ^16.8.0 || 17.x
+    dependencies:
+      '@reach/utils': 0.15.3
+      '@xstate/fsm': 1.4.0
+      tslib: 2.3.1
+    dev: false
+
+  /@reach/menu-button/0.15.3:
+    resolution: {integrity: sha512-cg9ta5z6JoYv7p+UDMrEhBAgj2O59L9bs8cPjpef1P8DtzXxTJLx9X7jOPTQr8ooUt5jYM+Mw9J6K5vKe7rEYw==}
+    peerDependencies:
+      react: ^16.8.0 || 17.x
+      react-dom: ^16.8.0 || 17.x
+    dependencies:
+      '@reach/dropdown': 0.15.3
+      '@reach/popover': 0.15.3
+      '@reach/utils': 0.15.3
+      prop-types: 15.7.2
+      tiny-warning: 1.0.3
+      tslib: 2.3.1
+    dev: false
+
+  /@reach/observe-rect/1.2.0:
+    resolution: {integrity: sha512-Ba7HmkFgfQxZqqaeIWWkNK0rEhpxVQHIoVyW1YDSkGsGIXzcaW4deC8B0pZrNSSyLTdIk7y+5olKt5+g0GmFIQ==}
+    dev: false
+
+  /@reach/popover/0.15.3:
+    resolution: {integrity: sha512-T5A1gZGXfl4vDqK6kb7tyxgKWur4QsoKwHJ0LcJZ9JDYtiUDbdBDw+yRHwvuExx48Glc8BYcdy6X6BF2n21FuA==}
+    peerDependencies:
+      react: ^16.8.0 || 17.x
+      react-dom: ^16.8.0 || 17.x
+    dependencies:
+      '@reach/portal': 0.15.3
+      '@reach/rect': 0.15.3
+      '@reach/utils': 0.15.3
+      tabbable: 4.0.0
+      tslib: 2.3.1
+    dev: false
+
+  /@reach/portal/0.15.3:
+    resolution: {integrity: sha512-9VkVEQIF9gK73uK1f9MYhrJivd0dpxhkBEb2zwVCIEGvKVxadmRNmCjgcWexGjA0UeCjIhEjQQehs/IZHNLPdw==}
+    peerDependencies:
+      react: ^16.8.0 || 17.x
+      react-dom: ^16.8.0 || 17.x
+    dependencies:
+      '@reach/utils': 0.15.3
+      tslib: 2.3.1
+    dev: false
+
+  /@reach/rect/0.15.3:
+    resolution: {integrity: sha512-ZKakUC14DoCbccc7ymARXCzfpaRMTvbaAibBw64/sg/Vm7W+bi+P3mu5QMQkGNxFKXaKu/szx+r9RzM4ld/IfQ==}
+    peerDependencies:
+      react: ^16.8.0 || 17.x
+      react-dom: ^16.8.0 || 17.x
+    dependencies:
+      '@reach/observe-rect': 1.2.0
+      '@reach/utils': 0.15.3
+      prop-types: 15.7.2
+      tiny-warning: 1.0.3
+      tslib: 2.3.1
+    dev: false
+
+  /@reach/utils/0.15.3:
+    resolution: {integrity: sha512-HFyjw8LZ4/RRk5bcMpDAeEc3aOeLR/vWRDsljlE3cHI5GfFlZcG3DDLSW8C2ba74RCFp/4X3Nz0nOrd4JdkZ1w==}
+    peerDependencies:
+      react: ^16.8.0 || 17.x
+      react-dom: ^16.8.0 || 17.x
+    dependencies:
+      tiny-warning: 1.0.3
+      tslib: 2.3.1
+    dev: false
+
   /@types/hast/2.3.4:
     resolution: {integrity: sha512-wLEm0QvaoawEDoTRwzTXp4b4jpwiJDvR5KMnFnVodm3scufTlBOWRD6N1OBf9TZMhjlNsSfcO5V+7AF4+Vy+9g==}
     dependencies:
@@ -588,6 +716,10 @@ packages:
 
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
+    dev: false
+
+  /@xstate/fsm/1.4.0:
+    resolution: {integrity: sha512-uTHDeu2xI5E1IFwf37JFQM31RrH7mY7877RqPBS4ZqSNUwoLDuct8AhBWaXGnVizBAYyimVwgCyGa9z/NiRhXA==}
     dev: false
 
   /ansi-styles/3.2.1:
@@ -899,6 +1031,13 @@ packages:
     resolution: {integrity: sha512-vM6rUVCVUJJt33bnmHiZEvr7wPT78ztX7rojL+LW51bHtLh6HTjx84LA5W4+oa6aKEJA7jJu5LR6vQRBpA5DVg==}
     dev: false
 
+  /loose-envify/1.4.0:
+    resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
+    hasBin: true
+    dependencies:
+      js-tokens: 4.0.0
+    dev: false
+
   /markdown-table/2.0.0:
     resolution: {integrity: sha512-Ezda85ToJUBhM6WGaG6veasyym+Tbs3cMAw/ZhOPqXiYsr0jgocBV3j3nx+4lk47plLlIqjwuTm/ywVI+zjJ/A==}
     dependencies:
@@ -1082,6 +1221,11 @@ packages:
       lodash: 4.17.21
     dev: false
 
+  /object-assign/4.1.1:
+    resolution: {integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=}
+    engines: {node: '>=0.10.0'}
+    dev: false
+
   /orderedmap/1.1.1:
     resolution: {integrity: sha512-3Ux8um0zXbVacKUkcytc0u3HgC0b0bBLT+I60r2J/En72cI0nZffqrA7Xtf2Hqs27j1g82llR5Mhbd0Z1XW4AQ==}
     dev: false
@@ -1137,6 +1281,14 @@ packages:
 
   /prismjs/1.25.0:
     resolution: {integrity: sha512-WCjJHl1KEWbnkQom1+SzftbtXMKQoezOCYs5rECqMN+jP+apI7ftoflyqigqzopSO3hMhTEb0mFClA8lkolgEg==}
+    dev: false
+
+  /prop-types/15.7.2:
+    resolution: {integrity: sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==}
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      react-is: 16.13.1
     dev: false
 
   /property-information/5.6.0:
@@ -1217,6 +1369,10 @@ packages:
       prosemirror-model: 1.14.3
       prosemirror-state: 1.3.4
       prosemirror-transform: 1.3.2
+    dev: false
+
+  /react-is/16.13.1:
+    resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: false
 
   /refractor/3.4.0:
@@ -1336,6 +1492,19 @@ packages:
     resolution: {integrity: sha512-Ryx7h91dGigDAqrwZ67n74d0g7M3E1xbQsewoY/4b7s7u4D5u9JMq4QvBZtBOdossthlLtnU5nJ41GjhcmmpQQ==}
     dev: false
 
+  /sn-stylekit/5.2.8:
+    resolution: {integrity: sha512-08eKl2Eigb8kzxl+Tqp7PyzSVA0psCR6+hIVNL4V7//J7DjmM2RanBPMRxIUqBBTX/1b+CbZdZb8wnbzD18NZw==}
+    peerDependencies:
+      preact: ^10.5.12
+    dependencies:
+      '@reach/listbox': 0.15.3
+      '@reach/menu-button': 0.15.3
+      prop-types: 15.7.2
+    transitivePeerDependencies:
+      - react
+      - react-dom
+    dev: false
+
   /source-map-js/0.6.2:
     resolution: {integrity: sha512-/3GptzWzu0+0MBQFrDKzw/DvvMTUORvgY6k6jd/VS6iCR4RDTKWH6v6WPwQoUO8667uQEf9Oe38DxAYWY5F/Ug==}
     engines: {node: '>=0.10.0'}
@@ -1367,6 +1536,10 @@ packages:
 
   /tiny-emitter/2.1.0:
     resolution: {integrity: sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==}
+    dev: false
+
+  /tiny-warning/1.0.3:
+    resolution: {integrity: sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==}
     dev: false
 
   /to-fast-properties/2.0.0:
