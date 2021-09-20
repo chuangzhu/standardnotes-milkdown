@@ -29,13 +29,23 @@ body {
   max-width: 100%;
 }
 
+.milkdown blockquote {
+  border-left: 0.3rem solid var(--sn-stylekit-neutral-color) !important;
+  color: var(--sn-stylekit-neutral-color) !important;
+}
+
+.milkdown pre,
+.milkdown code {
+  font-family: var(--sn-stylekit-monospace-font);
+}
+
 .milkdown table {
   border-collapse: collapse;
 }
 
-.milkdown td, th {
+.milkdown td,
+th {
   border: var(--sn-stylekit-secondary-border-color) 1px solid;
-  padding: 6px 13px;
 }
 
 .milkdown tr:nth-child(odd) {
@@ -48,12 +58,22 @@ body {
 
 /* Override styles for Milkdown components */
 
-.milkdown .code-fence,
-.milkdown .slash-dropdown {
+.milkdown .link {
+  color: var(--sn-stylekit-info-color);
+}
+
+.milkdown .slash-dropdown,
+.milkdown .tooltip,
+.milkdown .code-inline,
+.milkdown .code-fence {
   background: var(--sn-stylekit-contrast-background-color) !important;
+  border: 1px solid var(--sn-stylekit-border-color) !important;
+  border-radius: var(--sn-stylekit-general-border-radius) !important;
 }
 
 .milkdown .code-fence_select,
 .milkdown .code-fence_value {
+  border: 1px solid var(--sn-stylekit-border-color) !important;
+  border-radius: var(--sn-stylekit-general-border-radius) !important;
   background: var(--sn-stylekit-editor-background-color) !important;
 }
