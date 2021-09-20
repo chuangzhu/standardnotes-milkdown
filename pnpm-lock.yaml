@@ -1,7 +1,6 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@emotion/css': ^11.1.3
   '@milkdown/core': ^4.12.0
   '@milkdown/design-system': ^4.12.0
   '@milkdown/plugin-clipboard': ^4.12.0
@@ -13,7 +12,6 @@ specifiers:
   '@milkdown/plugin-slash': ^4.12.0
   '@milkdown/plugin-tooltip': ^4.12.0
   '@milkdown/preset-gfm': ^4.12.0
-  '@milkdown/theme-nord': ^4.12.0
   filesafe-js: ^1.0.4
   katex: ^0.13.18
   material-icons: ^1.3.0
@@ -24,7 +22,6 @@ specifiers:
   vite: ^2.5.4
 
 dependencies:
-  '@emotion/css': 11.1.3
   '@milkdown/core': 4.12.0
   '@milkdown/design-system': 4.12.0
   '@milkdown/plugin-clipboard': 4.12.0_@milkdown+core@4.12.0
@@ -36,7 +33,6 @@ dependencies:
   '@milkdown/plugin-slash': 4.12.0_85bbe54572049e0546c863d6269e1686
   '@milkdown/plugin-tooltip': 4.12.0_85bbe54572049e0546c863d6269e1686
   '@milkdown/preset-gfm': 4.12.0_@milkdown+core@4.12.0
-  '@milkdown/theme-nord': 4.12.0_@milkdown+core@4.12.0
   filesafe-js: 1.0.4
   katex: 0.13.18
   material-icons: 1.3.0
@@ -459,18 +455,6 @@ packages:
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
-    dev: false
-
-  /@milkdown/theme-nord/4.12.0_@milkdown+core@4.12.0:
-    resolution: {integrity: sha512-C/XjQQHdYeqrloQMRcXvKbOfvuq7d5mDkUO/P+xoxOFobmGboXH2reVMWV7IuXrP8CnlEuRtsCdRlQFhncGBBw==}
-    peerDependencies:
-      '@milkdown/core': '*'
-    dependencies:
-      '@emotion/css': 11.1.3
-      '@milkdown/core': 4.12.0
-      '@milkdown/design-system': 4.12.0
-    transitivePeerDependencies:
-      - '@babel/core'
     dev: false
 
   /@milkdown/utils/4.12.0_@milkdown+core@4.12.0:

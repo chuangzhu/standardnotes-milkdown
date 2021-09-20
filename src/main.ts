@@ -1,10 +1,11 @@
 import "sn-stylekit/dist/stylekit.css";
-import "./style.css"
+import "./style.css";
 import "katex/dist/katex.min.css";
 import "material-icons/iconfont/material-icons.css";
 import "prismjs/themes/prism.css";
 import { EditorKit, EditorKitDelegate } from "sn-editor-kit";
-import { defaultValueCtx, Editor, rootCtx, themeFactory } from "@milkdown/core";
+import { defaultValueCtx, Editor, rootCtx } from "@milkdown/core";
+import { basic } from "./theme-basic";
 import { gfm } from "@milkdown/preset-gfm";
 import { listener, listenerCtx } from "@milkdown/plugin-listener";
 import { tooltip } from "@milkdown/plugin-tooltip";
@@ -44,7 +45,7 @@ class MilkdownEditor {
         });
       })
       // Use an empty theme here. Style it with CSS.
-      .use(themeFactory({}))
+      .use(basic)
       .use(gfm)
       .use(listener)
       .use(math)

@@ -1,3 +1,5 @@
+/* Basic styles */
+
 body {
   padding: 0;
   margin: 0;
@@ -7,7 +9,7 @@ body {
   min-height: 100vh;
   box-sizing: border-box;
   position: relative;
-  background-color: var(--sn-stylekit-editor-background-color);
+  background: var(--sn-stylekit-editor-background-color);
   font-family: var(--sn-stylekit-sans-serif-font);
   color: var(--sn-stylekit-editor-foreground-color);
   margin-left: auto;
@@ -17,4 +19,41 @@ body {
 
 .milkdown .editor {
   outline: none;
+}
+
+/* Override styles for basic HTML elements */
+
+.milkdown img {
+  width: unset !important;
+  height: unset !important;
+  max-width: 100%;
+}
+
+.milkdown table {
+  border-collapse: collapse;
+}
+
+.milkdown td, th {
+  border: var(--sn-stylekit-secondary-border-color) 1px solid;
+  padding: 6px 13px;
+}
+
+.milkdown tr:nth-child(odd) {
+  background: var(--sn-stylekit-secondary-background-color);
+}
+
+.milkdown tr:nth-child(even) {
+  background: var(--sn-stylekit-secondary-contrast-background-color);
+}
+
+/* Override styles for Milkdown components */
+
+.milkdown .code-fence,
+.milkdown .slash-dropdown {
+  background: var(--sn-stylekit-contrast-background-color) !important;
+}
+
+.milkdown .code-fence_select,
+.milkdown .code-fence_value {
+  background: var(--sn-stylekit-editor-background-color) !important;
 }
