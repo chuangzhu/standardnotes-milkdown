@@ -23,15 +23,67 @@ body {
 
 /* Override styles for basic HTML elements */
 
-.milkdown img {
-  width: unset !important;
-  height: unset !important;
-  max-width: 100%;
+.milkdown h1 {
+  font-size: 3rem !important;
+  line-height: 3.125rem !important;
+  font-weight: 400 !important;
+  border-bottom: 1px solid var(--sn-stylekit-border-color) !important;
+  padding-bottom: 0.3em !important;
+  margin: 0.5em 0 !important;
+}
+
+.milkdown h2 {
+  font-size: 2.125rem !important;
+  line-height: 2.5rem !important;
+  font-weight: 400 !important;
+  border-bottom: 1px solid var(--sn-stylekit-border-color) !important;
+  padding-bottom: 0.3em !important;
+  margin: 0.5em 0 !important;
+}
+
+.milkdown h3 {
+  font-size: 1.5rem !important;
+  line-height: 2rem !important;
+  font-weight: 400 !important;
+  margin: 0.7em 0 !important;
+}
+
+.milkdown h4 {
+  font-size: 1rem !important;
+  line-height: 1.75rem !important;
+  font-weight: 500 !important;
+  margin: 0.8em 0 !important;
+}
+
+.milkdown h5 {
+  line-height: 1.75rem !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+.milkdown a,
+.milkdown p,
+.milkdown ul,
+.milkdown ol,
+.milkdown td,
+.milkdown pre,
+.milkdown blockquote {
+  line-height: 1.5rem !important;
+  font-weight: 400 !important;
+  margin-top: 0 !important;
+  font-size: 16px !important;
+  margin-bottom: 1em !important;
 }
 
 .milkdown blockquote {
   border-left: 0.3rem solid var(--sn-stylekit-neutral-color) !important;
-  color: var(--sn-stylekit-neutral-color) !important;
+  color: var(--sn-stylekit-secondary-foreground-color) !important;
+}
+
+.milkdown img {
+  width: unset !important;
+  height: unset !important;
+  max-width: 100%;
 }
 
 .milkdown pre,
@@ -43,17 +95,24 @@ body {
   border-collapse: collapse;
 }
 
-.milkdown td,
-th {
-  border: var(--sn-stylekit-secondary-border-color) 1px solid;
-}
-
 .milkdown tr:nth-child(odd) {
   background: var(--sn-stylekit-secondary-background-color);
 }
 
 .milkdown tr:nth-child(even) {
   background: var(--sn-stylekit-secondary-contrast-background-color);
+}
+
+.milkdown td,
+.milkdown th {
+  border: var(--sn-stylekit-secondary-border-color) 1px solid;
+  padding: 6px 13px !important;
+  height: unset !important;
+}
+
+.milkdown th,
+.milkdown th > p {
+  font-weight: 700 !important;
 }
 
 /* Override styles for Milkdown components */
@@ -76,4 +135,12 @@ th {
   border: 1px solid var(--sn-stylekit-border-color) !important;
   border-radius: var(--sn-stylekit-general-border-radius) !important;
   background: var(--sn-stylekit-editor-background-color) !important;
+}
+
+.milkdown .empty-node {
+  color: var(--sn-stylekit-neutral-color) !important;
+}
+
+.milkdown .code-fence > pre {
+  padding-bottom: 0 !important;
 }
