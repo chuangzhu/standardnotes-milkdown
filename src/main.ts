@@ -18,6 +18,7 @@ import { math } from "@milkdown/plugin-math";
 
 class MilkdownEditor {
   editorKit: any;
+  prevText: any;
   constructor() {
     const delegate = new EditorKitDelegate({
       setEditorRawText: (text: string) => {
@@ -34,6 +35,7 @@ class MilkdownEditor {
   }
 
   initMilkdown(defaultValue: string) {
+    this.prevText = defaultValue;
     const app = document.getElementById("app")!;
     app.innerHTML = "";
     Editor.make()
@@ -59,15 +61,16 @@ class MilkdownEditor {
   }
 
   saveNote(text: string) {
-    /** This will work in an SN context, but breaks the standalone editor,
-     * so we need to catch the error
-     */
+    // Don't save if nothing changed
+    if (this.prevText === text)
+      return
     try {
       this.editorKit.onEditorValueChanged(text);
     } catch (error) {
       console.log("Error saving note:", error);
     }
+    this.prevText = text;
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => new MilkdownEditor());
+new MilkdownEditor();
