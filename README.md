@@ -17,11 +17,15 @@ Clone this repo and cd into it.
 ```bash
 pnpm install
 pnpm build
+cp package.json dist/
 ```
 Compress `dist/` into ZIP.
 
+<!-- From https://docs.standardnotes.com/extensions/publishing,
+     SN automatically moves contents in ZIP up a level -->
+
 ```bash
-zip -r dist/ext.zip dist
+zip -r dist/0.1.0.zip dist
 ```
 Create `dist/ext.json` with this template:
 
@@ -34,7 +38,7 @@ Create `dist/ext.json` with this template:
   "version": "0.1.0",
   "description": "A WYSIWYG Markdown editor for Standard Notes.",
   "url": "https://yourdomain.com/link-to-hosted-extension/",
-  "download_url": "https://yourdomain.com/link-to-hosted-extension/ext.zip",
+  "download_url": "https://yourdomain.com/link-to-hosted-extension/0.1.0.zip",
   "latest_url": "https://yourdomain.com/link-to-hosted-extension/ext.json"
 }
 ```

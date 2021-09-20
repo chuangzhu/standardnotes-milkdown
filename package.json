@@ -4,6 +4,9 @@
   "version": "0.1.0",
   "license": "AGPL-3.0",
   "author": "Chuang Zhu <chuang@melty.land>",
+  "sn": {
+    "main": "index.html"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
