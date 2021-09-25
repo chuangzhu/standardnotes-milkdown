@@ -78,26 +78,27 @@ body {
   font-size: 16px !important;
   margin-bottom: 1em !important;
 }
+.milkdown li > div > p {
+  margin: 0.5rem 0 !important;
+}
 
 .milkdown blockquote {
   border-left: 0.3rem solid var(--sn-stylekit-neutral-color) !important;
   color: var(--sn-stylekit-secondary-foreground-color) !important;
 }
 
-.milkdown img {
+.milkdown .image:not(.system) {
+  display: inline !important;
+}
+.milkdown .image:not(.system) > img {
   width: unset !important;
   height: unset !important;
   max-width: 100%;
 }
-/* We have to do this immediately becase emojis here are also images */
-.milkdown .emoji {
-  height: 1em !important;
-  width: 1em !important;
-}
 
 .milkdown pre,
 .milkdown code,
-.milkdown .diagram > [data-type=diagram] {
+.milkdown .diagram > [data-type="diagram"] {
   font-family: var(--sn-stylekit-monospace-font);
 }
 
@@ -138,14 +139,30 @@ body {
   color: var(--sn-stylekit-info-color);
 }
 
+.milkdown .image.system,  /* Loading and failed */
 .milkdown .slash-dropdown,
 .milkdown .tooltip,
 .milkdown .tooltip-input,
+.milkdown .table-tooltip,
 .milkdown .code-inline,
 .milkdown .code-fence {
   background: var(--sn-stylekit-contrast-background-color) !important;
   border: 1px solid var(--sn-stylekit-border-color) !important;
   border-radius: var(--sn-stylekit-general-border-radius) !important;
+}
+
+.milkdown .slash-dropdown-item.active {
+  background: var(--sn-stylekit-secondary-contrast-background-color) !important;
+}
+
+/* Floating effect for tool tips */
+
+.milkdown .tooltip,
+.milkdown .tooltip-input,
+.milkdown .table-tooltip {
+  box-shadow: 0px 1px 1px var(--sn-stylekit-shadow-color),
+    0px 2px 1px var(--sn-stylekit-shadow-color),
+    0px 1px 3px var(--sn-stylekit-shadow-color);
 }
 
 .milkdown .code-fence_select,
@@ -157,18 +174,19 @@ body {
 
 .milkdown .empty-node {
   color: var(--sn-stylekit-neutral-color) !important;
+  font-family: var(--sn-stylekit-monospace-font);
 }
 
 .milkdown .code-fence > pre {
   padding-bottom: 0 !important;
 }
 
-.milkdown .diagram[data-editing=true] {
+.milkdown .diagram[data-editing="true"] {
   border: 1px solid var(--sn-stylekit-border-color) !important;
   border-radius: var(--sn-stylekit-general-border-radius) !important;
 }
 
-.milkdown .diagram > [data-type=diagram] {
+.milkdown .diagram > [data-type="diagram"] {
   background: var(--sn-stylekit-contrast-background-color) !important;
 }
 
@@ -205,7 +223,7 @@ body {
 }
 
 .ProseMirror-selectednode {
-  outline: 2px solid #8cf;
+  outline: 2px solid var(--sn-stylekit-info-color);
 }
 
 /* Make sure li selections wrap around markers */
@@ -221,6 +239,6 @@ li.ProseMirror-selectednode:after {
   right: -2px;
   top: -2px;
   bottom: -2px;
-  border: 2px solid #8cf;
+  border: 2px solid var(--sn-stylekit-info-color);
   pointer-events: none;
 }

@@ -15,17 +15,28 @@ import { clipboard } from "@milkdown/plugin-clipboard";
 import { emoji } from "@milkdown/plugin-emoji";
 import { prism } from "@milkdown/plugin-prism";
 import { math } from "@milkdown/plugin-math";
-import { diagram } from '@milkdown/plugin-diagram';
+import { diagram } from "@milkdown/plugin-diagram";
 
 class MilkdownEditor {
+  editor?: Editor;
   editorKit: any;
-  prevText: any;
+  prevText: string = "";
   constructor() {
     const delegate = new EditorKitDelegate({
+      // SN calls this again instead of open a new page
+      // when switching between notes with the same editor
       setEditorRawText: (text: string) => {
-        // Render the editor once SN give us text
+        if (this.editor instanceof Editor) {
+          // This doesn't work
+          // this.editor.action((ctx) => {
+          //   ctx.set(defaultValueCtx, text);
+          // });
+          // return;
+          delete this.editor;
+        }
         this.initMilkdown(text);
       },
+      clearUndoHistory: () => {},
     });
 
     this.editorKit = new EditorKit({
@@ -39,7 +50,7 @@ class MilkdownEditor {
     this.prevText = defaultValue;
     const app = document.getElementById("app")!;
     app.innerHTML = "";
-    const editor = await Editor.make()
+    this.editor = await Editor.make()
       .config((ctx) => {
         ctx.set(rootCtx, app);
         ctx.set(defaultValueCtx, defaultValue);
@@ -79,4 +90,4 @@ class MilkdownEditor {
   }
 }
 
-new MilkdownEditor();
+document.addEventListener("DOMContentLoaded", () => new MilkdownEditor());
