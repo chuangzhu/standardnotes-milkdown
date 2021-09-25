@@ -67,7 +67,10 @@ body {
 .milkdown ol,
 .milkdown td,
 .milkdown pre,
-.milkdown blockquote {
+.milkdown blockquote,
+.milkdown .tableWrapper,
+.milkdown .math-node,
+.milkdown .code-fence {
   line-height: 1.5rem !important;
   font-weight: 400 !important;
   margin-top: 0 !important;
@@ -85,6 +88,11 @@ body {
   height: unset !important;
   max-width: 100%;
 }
+/* We have to do this immediately becase emojis here are also images */
+.milkdown .emoji {
+  height: 1em !important;
+  width: 1em !important;
+}
 
 .milkdown pre,
 .milkdown code {
@@ -93,6 +101,7 @@ body {
 
 .milkdown table {
   border-collapse: collapse;
+  margin: 0 !important;
 }
 
 .milkdown tr:nth-child(odd) {
@@ -113,6 +122,12 @@ body {
 .milkdown th,
 .milkdown th > p {
   font-weight: 700 !important;
+}
+
+.milkdown hr {
+  background-color: var(--sn-stylekit-secondary-border-color) !important;
+  margin-top: 0.3em;
+  margin-bottom: 1.3em;
 }
 
 /* Override styles for Milkdown components */
