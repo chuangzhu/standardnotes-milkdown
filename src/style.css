@@ -70,7 +70,8 @@ body {
 .milkdown blockquote,
 .milkdown .tableWrapper,
 .milkdown .math-node,
-.milkdown .code-fence {
+.milkdown .code-fence,
+.milkdown .diagram {
   line-height: 1.5rem !important;
   font-weight: 400 !important;
   margin-top: 0 !important;
@@ -95,7 +96,8 @@ body {
 }
 
 .milkdown pre,
-.milkdown code {
+.milkdown code,
+.milkdown .diagram > [data-type=diagram] {
   font-family: var(--sn-stylekit-monospace-font);
 }
 
@@ -159,4 +161,66 @@ body {
 
 .milkdown .code-fence > pre {
   padding-bottom: 0 !important;
+}
+
+.milkdown .diagram[data-editing=true] {
+  border: 1px solid var(--sn-stylekit-border-color) !important;
+  border-radius: var(--sn-stylekit-general-border-radius) !important;
+}
+
+.milkdown .diagram > [data-type=diagram] {
+  background: var(--sn-stylekit-contrast-background-color) !important;
+}
+
+/* copy from https://github.com/ProseMirror/prosemirror-view/blob/master/style/prosemirror.css */
+.ProseMirror {
+  position: relative;
+}
+
+.ProseMirror {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  white-space: break-spaces;
+  -webkit-font-variant-ligatures: none;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0; /* the above doesn't seem to work in Edge */
+}
+
+.ProseMirror pre {
+  white-space: pre-wrap;
+}
+
+.ProseMirror li {
+  position: relative;
+}
+
+.ProseMirror-hideselection *::selection {
+  background: transparent;
+}
+.ProseMirror-hideselection *::-moz-selection {
+  background: transparent;
+}
+.ProseMirror-hideselection {
+  caret-color: transparent;
+}
+
+.ProseMirror-selectednode {
+  outline: 2px solid #8cf;
+}
+
+/* Make sure li selections wrap around markers */
+
+li.ProseMirror-selectednode {
+  outline: none;
+}
+
+li.ProseMirror-selectednode:after {
+  content: "";
+  position: absolute;
+  left: -32px;
+  right: -2px;
+  top: -2px;
+  bottom: -2px;
+  border: 2px solid #8cf;
+  pointer-events: none;
 }
