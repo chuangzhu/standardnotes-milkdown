@@ -17,6 +17,8 @@ specifiers:
   katex: ^0.13.18
   material-icons: ^1.3.0
   prismjs: ^1.25.0
+  prosemirror-keymap: ^1.1.4
+  prosemirror-state: ^1.3.4
   sn-editor-kit: ^1.0.9
   sn-stylekit: ^5.2.8
   typescript: ^4.3.2
@@ -30,7 +32,7 @@ dependencies:
   '@milkdown/plugin-emoji': 4.12.0_@milkdown+core@4.12.0
   '@milkdown/plugin-history': 4.12.0_@milkdown+core@4.12.0
   '@milkdown/plugin-listener': 4.12.0_@milkdown+core@4.12.0
-  '@milkdown/plugin-math': 4.12.0_505284417b39655861d5ac45c9733db0
+  '@milkdown/plugin-math': 4.12.0_628cfd0ed3b8d8de9c20720fecb44354
   '@milkdown/plugin-prism': 4.12.0_@milkdown+core@4.12.0
   '@milkdown/plugin-slash': 4.12.0_85bbe54572049e0546c863d6269e1686
   '@milkdown/plugin-tooltip': 4.12.0_85bbe54572049e0546c863d6269e1686
@@ -39,6 +41,8 @@ dependencies:
   katex: 0.13.18
   material-icons: 1.3.0
   prismjs: 1.25.0
+  prosemirror-keymap: 1.1.4
+  prosemirror-state: 1.3.4
   sn-editor-kit: 1.0.9
   sn-stylekit: 5.2.8
 
@@ -105,7 +109,7 @@ packages:
       to-fast-properties: 2.0.0
     dev: false
 
-  /@benrbray/prosemirror-math/0.2.2_katex@0.13.18:
+  /@benrbray/prosemirror-math/0.2.2_e9d1fe0269212de32cbb28c7ca53dc38:
     resolution: {integrity: sha512-n+V8MNKaQ9HtA1IASzoBFwthFY55kpu2I+0aF103AbqUw5eM8YlxHeltnLqjnYRVY4/a6A9t9YlBMBQOli5jgw==}
     peerDependencies:
       katex: ^0.13.0
@@ -120,6 +124,8 @@ packages:
       prosemirror-view: ^1.18.2
     dependencies:
       katex: 0.13.18
+      prosemirror-keymap: 1.1.4
+      prosemirror-state: 1.3.4
     dev: false
 
   /@braintree/sanitize-url/3.1.0:
@@ -360,13 +366,13 @@ packages:
       tslib: 2.3.1
     dev: false
 
-  /@milkdown/plugin-math/4.12.0_505284417b39655861d5ac45c9733db0:
+  /@milkdown/plugin-math/4.12.0_628cfd0ed3b8d8de9c20720fecb44354:
     resolution: {integrity: sha512-cw3GeQ0Dwj9PeTyShcgHonoQ/6xdtPUsuenexHyGoBm3PZayQJEVUemwgjNepEs3Qh3oGiqUVUPoNJ6TDaMrmg==}
     peerDependencies:
       '@milkdown/core': '*'
       katex: ^0.13.2
     dependencies:
-      '@benrbray/prosemirror-math': 0.2.2_katex@0.13.18
+      '@benrbray/prosemirror-math': 0.2.2_e9d1fe0269212de32cbb28c7ca53dc38
       '@emotion/css': 11.1.3
       '@milkdown/core': 4.12.0
       '@milkdown/utils': 4.12.0_@milkdown+core@4.12.0

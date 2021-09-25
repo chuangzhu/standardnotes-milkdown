@@ -16,6 +16,7 @@ import { emoji } from "@milkdown/plugin-emoji";
 import { prism } from "@milkdown/plugin-prism";
 import { math } from "@milkdown/plugin-math";
 import { diagram } from "@milkdown/plugin-diagram";
+import tabInserter from "./tab-inserter";
 
 class MilkdownEditor {
   editor?: Editor;
@@ -70,8 +71,8 @@ class MilkdownEditor {
       .use(clipboard)
       .use(prism)
       .use(diagram)
+      .use(tabInserter)
       .create();
-    app.addEventListener("keydown", this.onKeyDown);
   }
 
   saveNote(text: string) {
@@ -83,10 +84,6 @@ class MilkdownEditor {
       console.log("Error saving note:", error);
     }
     this.prevText = text;
-  }
-
-  onKeyDown(ev: KeyboardEvent) {
-    if (ev.key === "Tab") ev.preventDefault();
   }
 }
 

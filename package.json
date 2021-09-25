@@ -33,6 +33,8 @@
     "katex": "^0.13.18",
     "material-icons": "^1.3.0",
     "prismjs": "^1.25.0",
+    "prosemirror-keymap": "^1.1.4",
+    "prosemirror-state": "^1.3.4",
     "sn-editor-kit": "^1.0.9",
     "sn-stylekit": "^5.2.8"
   }
