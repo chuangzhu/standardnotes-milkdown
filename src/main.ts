@@ -15,6 +15,7 @@ import { clipboard } from "@milkdown/plugin-clipboard";
 import { emoji } from "@milkdown/plugin-emoji";
 import { prism } from "@milkdown/plugin-prism";
 import { math } from "@milkdown/plugin-math";
+import { diagram } from '@milkdown/plugin-diagram';
 
 class MilkdownEditor {
   editorKit: any;
@@ -34,11 +35,11 @@ class MilkdownEditor {
     });
   }
 
-  initMilkdown(defaultValue: string) {
+  async initMilkdown(defaultValue: string) {
     this.prevText = defaultValue;
     const app = document.getElementById("app")!;
     app.innerHTML = "";
-    Editor.make()
+    const editor = await Editor.make()
       .config((ctx) => {
         ctx.set(rootCtx, app);
         ctx.set(defaultValueCtx, defaultValue);
@@ -57,19 +58,24 @@ class MilkdownEditor {
       .use(emoji)
       .use(clipboard)
       .use(prism)
+      .use(diagram)
       .create();
+    app.addEventListener("keydown", this.onKeyDown);
   }
 
   saveNote(text: string) {
     // Don't save if nothing changed
-    if (this.prevText === text)
-      return
+    if (this.prevText === text) return;
     try {
       this.editorKit.onEditorValueChanged(text);
     } catch (error) {
       console.log("Error saving note:", error);
     }
     this.prevText = text;
+  }
+
+  onKeyDown(ev: KeyboardEvent) {
+    if (ev.key === "Tab") ev.preventDefault();
   }
 }
 
