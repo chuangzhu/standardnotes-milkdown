@@ -145,7 +145,8 @@ body {
 .milkdown .tooltip-input,
 .milkdown .table-tooltip,
 .milkdown .code-inline,
-.milkdown .code-fence {
+.milkdown .code-fence,
+.milkdown .math-node.ProseMirror-selectednode {
   background: var(--sn-stylekit-contrast-background-color) !important;
   border: 1px solid var(--sn-stylekit-border-color) !important;
   border-radius: var(--sn-stylekit-general-border-radius) !important;

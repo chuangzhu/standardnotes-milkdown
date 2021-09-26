@@ -4,7 +4,14 @@ import "katex/dist/katex.min.css";
 import "material-icons/iconfont/material-icons.css";
 import "prismjs/themes/prism.css";
 import { EditorKit, EditorKitDelegate } from "sn-editor-kit";
-import { defaultValueCtx, Editor, rootCtx } from "@milkdown/core";
+import {
+  defaultValueCtx,
+  Editor,
+  rootCtx,
+  editorViewCtx,
+  parserCtx,
+  Ctx,
+} from "@milkdown/core";
 import { basic } from "./theme-basic";
 import { gfm } from "@milkdown/preset-gfm";
 import { listener, listenerCtx } from "@milkdown/plugin-listener";
@@ -18,6 +25,25 @@ import { math } from "@milkdown/plugin-math";
 import { diagram } from "@milkdown/plugin-diagram";
 import tabInserter from "./tab-inserter";
 
+function setTextAction(text: string) {
+  return (ctx: Ctx) => {
+    const view = ctx.get(editorViewCtx);
+    const parser = ctx.get(parserCtx);
+    // Turn Markdown into ProseMirror node
+    const doc = parser(text);
+    if (!doc) return;
+    const state = view.state;
+    view.dispatch(
+      // ProseMirror transaction
+      state.tr.replace(
+        0,
+        state.doc.content.size,
+        doc.slice(0, doc.content.size)
+      )
+    );
+  };
+}
+
 class MilkdownEditor {
   editor?: Editor;
   editorKit: any;
@@ -27,16 +53,17 @@ class MilkdownEditor {
       // SN calls this again instead of open a new page
       // when switching between notes with the same editor
       setEditorRawText: (text: string) => {
+        // Already have a Milkdown, change its text
         if (this.editor instanceof Editor) {
-          // This doesn't work
-          // this.editor.action((ctx) => {
-          //   ctx.set(defaultValueCtx, text);
-          // });
-          // return;
-          delete this.editor;
+          this.prevText = text;
+          this.editor.action(setTextAction(text));
+          // Go to top
+          window.scrollTo(0, 0);
+          return;
         }
         this.initMilkdown(text);
       },
+      // TODO: clear ProseMirror history here
       clearUndoHistory: () => {},
     });
 
@@ -50,7 +77,6 @@ class MilkdownEditor {
   async initMilkdown(defaultValue: string) {
     this.prevText = defaultValue;
     const app = document.getElementById("app")!;
-    app.innerHTML = "";
     this.editor = await Editor.make()
       .config((ctx) => {
         ctx.set(rootCtx, app);
