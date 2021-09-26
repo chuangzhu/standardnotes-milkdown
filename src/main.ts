@@ -35,11 +35,11 @@ function setTextAction(text: string) {
     const state = view.state;
     view.dispatch(
       // ProseMirror transaction
-      state.tr.replace(
-        0,
-        state.doc.content.size,
-        doc.slice(0, doc.content.size)
-      )
+      state.tr
+        .replace(0, state.doc.content.size, doc.slice(0, doc.content.size))
+        // "Clear" history
+        // https://prosemirror.net/docs/ref/#history.history
+        .setMeta("addToHistory", false)
     );
   };
 }
@@ -63,7 +63,6 @@ class MilkdownEditor {
         }
         this.initMilkdown(text);
       },
-      // TODO: clear ProseMirror history here
       clearUndoHistory: () => {},
     });
 
