@@ -23,7 +23,7 @@ import { emoji } from "@milkdown/plugin-emoji";
 import { prism } from "@milkdown/plugin-prism";
 import { math } from "@milkdown/plugin-math";
 import { diagram } from "@milkdown/plugin-diagram";
-import tabInserter from "./tab-inserter";
+import { indent } from "@milkdown/plugin-indent";
 
 function setTextAction(text: string) {
   return (ctx: Ctx) => {
@@ -96,7 +96,7 @@ class MilkdownEditor {
       .use(clipboard)
       .use(prism)
       .use(diagram)
-      .use(tabInserter)
+      .use(indent)
       .create();
   }
 
