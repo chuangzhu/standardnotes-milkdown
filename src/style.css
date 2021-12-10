@@ -98,6 +98,9 @@ body {
 
 .milkdown pre,
 .milkdown code,
+.milkdown .milkdown-emoji-filter_item-key,
+.milkdown .tooltip-input > input[placeholder="Input Math"],
+.milkdown .math-block > [data-type="math_block"],
 .milkdown .diagram > [data-type="diagram"] {
   font-family: var(--sn-stylekit-monospace-font);
 }
@@ -135,6 +138,7 @@ body {
 
 /* Override styles for Milkdown components */
 
+.milkdown .tooltip-input > button,
 .milkdown .link {
   color: var(--sn-stylekit-info-color);
 }
@@ -144,6 +148,7 @@ body {
 .milkdown .tooltip,
 .milkdown .tooltip-input,
 .milkdown .table-tooltip,
+.milkdown .milkdown-emoji-filter,
 .milkdown .code-inline,
 .milkdown .code-fence,
 .milkdown .math-node.ProseMirror-selectednode {
@@ -152,12 +157,9 @@ body {
   border-radius: var(--sn-stylekit-general-border-radius) !important;
 }
 
-.milkdown .slash-dropdown-item.active {
-  background: var(--sn-stylekit-secondary-contrast-background-color) !important;
-}
-
 /* Floating effect for tool tips */
 
+.milkdown .milkdown-emoji-filter,
 .milkdown .tooltip,
 .milkdown .tooltip-input,
 .milkdown .table-tooltip {
@@ -171,6 +173,17 @@ body {
   border: 1px solid var(--sn-stylekit-border-color) !important;
   border-radius: var(--sn-stylekit-general-border-radius) !important;
   background: var(--sn-stylekit-editor-background-color) !important;
+}
+
+.milkdown .code-fence_select-option:hover {
+  background: var(--sn-stylekit-contrast-background-color) !important;
+}
+
+.milkdown .tooltip > span:hover,
+.milkdown .tooltip-input > button:hover,
+.milkdown .milkdown-emoji-filter_item.active,
+.milkdown .slash-dropdown-item.active {
+  background: var(--sn-stylekit-secondary-contrast-background-color) !important;
 }
 
 .milkdown .empty-node {
@@ -187,6 +200,7 @@ body {
   border-radius: var(--sn-stylekit-general-border-radius) !important;
 }
 
+.milkdown .math-block > [data-type="math_block"],
 .milkdown .diagram > [data-type="diagram"] {
   background: var(--sn-stylekit-contrast-background-color) !important;
 }
