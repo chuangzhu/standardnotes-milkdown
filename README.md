@@ -4,7 +4,7 @@ A WYSIWYG Markdown editor for [Standard Notes](https://standardnotes.com), based
 
 ## Usage
 
-Click *Extensions > Import Extensions* on your Standard Notes, paste the following URL into it and hit enter.
+Click *Settings > Open Preference* on your Standard Notes. On *General > Advanced Settings > Install Custom Extension*, paste the following URL into it and hit enter.
 
 ```
 https://sn-extensions.melty.land/milkdown/ext.json
@@ -25,7 +25,7 @@ Compress `dist/` into ZIP.
      SN automatically moves contents in ZIP up a level -->
 
 ```bash
-zip -r dist/0.2.0.zip dist
+zip -r dist/0.2.1.zip dist
 ```
 Create `dist/ext.json` with this template:
 
@@ -35,7 +35,7 @@ Create `dist/ext.json` with this template:
   "name": "Milkdown",
   "content_type": "SN|Component",
   "area": "editor-editor",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A WYSIWYG Markdown editor for Standard Notes.",
   "url": "https://yourdomain.com/link-to-hosted-extension/",
   "download_url": "https://yourdomain.com/link-to-hosted-extension/0.2.0.zip",
