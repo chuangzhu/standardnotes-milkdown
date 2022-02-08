@@ -25,7 +25,7 @@ Compress `dist/` into ZIP.
      SN automatically moves contents in ZIP up a level -->
 
 ```bash
-zip -r dist/0.2.1.zip dist
+zip -r dist/0.2.2.zip dist
 ```
 Create `dist/ext.json` with this template:
 
@@ -35,10 +35,10 @@ Create `dist/ext.json` with this template:
   "name": "Milkdown",
   "content_type": "SN|Component",
   "area": "editor-editor",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A WYSIWYG Markdown editor for Standard Notes.",
   "url": "https://yourdomain.com/link-to-hosted-extension/",
-  "download_url": "https://yourdomain.com/link-to-hosted-extension/0.2.0.zip",
+  "download_url": "https://yourdomain.com/link-to-hosted-extension/0.2.2.zip",
   "latest_url": "https://yourdomain.com/link-to-hosted-extension/ext.json"
 }
 ```

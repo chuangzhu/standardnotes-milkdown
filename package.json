@@ -1,7 +1,7 @@
 {
   "name": "standardnotes-milkdown",
   "description": "A WYSIWYG Markdown editor for Standard Notes.",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "license": "AGPL-3.0",
   "author": "Chuang Zhu <chuang@melty.land>",
   "sn": {
