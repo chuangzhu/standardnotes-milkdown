@@ -13,30 +13,32 @@
     "serve": "vite preview"
   },
   "devDependencies": {
-    "typescript": "^4.5.3",
-    "vite": "^2.7.1"
+    "typescript": "^4.5.5",
+    "vite": "^2.7.13"
   },
   "dependencies": {
-    "@milkdown/core": "^5.2.0",
-    "@milkdown/design-system": "^5.2.0",
-    "@milkdown/plugin-clipboard": "^5.2.0",
-    "@milkdown/plugin-diagram": "^5.2.0",
-    "@milkdown/plugin-emoji": "^5.2.0",
-    "@milkdown/plugin-history": "^5.2.0",
-    "@milkdown/plugin-indent": "^5.2.0",
-    "@milkdown/plugin-listener": "^5.2.0",
-    "@milkdown/plugin-math": "^5.2.0",
-    "@milkdown/plugin-prism": "^5.2.0",
-    "@milkdown/plugin-slash": "^5.2.0",
-    "@milkdown/plugin-tooltip": "^5.2.0",
-    "@milkdown/preset-gfm": "^5.2.0",
+    "@milkdown/core": "^5.5.0",
+    "@milkdown/design-system": "^5.5.0",
+    "@milkdown/plugin-clipboard": "^5.5.0",
+    "@milkdown/plugin-diagram": "^5.5.0",
+    "@milkdown/plugin-emoji": "^5.5.0",
+    "@milkdown/plugin-history": "^5.5.0",
+    "@milkdown/plugin-indent": "^5.5.0",
+    "@milkdown/plugin-listener": "^5.5.0",
+    "@milkdown/plugin-math": "^5.5.0",
+    "@milkdown/plugin-prism": "^5.5.0",
+    "@milkdown/plugin-slash": "^5.5.0",
+    "@milkdown/plugin-tooltip": "^5.5.0",
+    "@milkdown/preset-commonmark": "^5.5.0",
+    "@milkdown/preset-gfm": "^5.5.0",
+    "@milkdown/prose": "^5.5.0",
     "filesafe-js": "^1.0.4",
     "katex": "^0.13.24",
-    "material-icons": "^1.10.4",
-    "prismjs": "^1.25.0",
+    "material-icons": "^1.10.6",
+    "prismjs": "^1.26.0",
     "prosemirror-keymap": "^1.1.5",
     "prosemirror-state": "^1.3.4",
     "sn-editor-kit": "^1.0.9",
-    "sn-stylekit": "^5.2.17"
+    "sn-stylekit": "^5.2.21"
   }
 }

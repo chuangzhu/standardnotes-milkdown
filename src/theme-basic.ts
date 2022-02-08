@@ -49,6 +49,6 @@ export const slots: ThemePack["slots"] = () => ({
 /**
  * A basic theme for Milkdown to render. Most of the other styles are defined in style.css.
  */
-export const basic = themeFactory({
+export const basic = themeFactory((_) => ({
   slots,
-});
+}));

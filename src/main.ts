@@ -80,9 +80,11 @@ class MilkdownEditor {
       .config((ctx) => {
         ctx.set(rootCtx, app);
         ctx.set(defaultValueCtx, defaultValue);
-        ctx.set(listenerCtx, {
-          markdown: [(get) => this.saveNote(get())],
-        });
+        ctx
+          .get(listenerCtx)
+          .markdownUpdated((_, markdown) =>
+            this.saveNote(markdown)
+          );
       })
       // Use an empty theme here. Style it with CSS.
       .use(basic)
