@@ -24,6 +24,7 @@ import { prism } from "@milkdown/plugin-prism";
 import { math } from "@milkdown/plugin-math";
 import { diagram } from "@milkdown/plugin-diagram";
 import { indent } from "@milkdown/plugin-indent";
+import { menu } from "@milkdown/plugin-menu";
 
 function setTextAction(text: string) {
   return (ctx: Ctx) => {
@@ -82,9 +83,7 @@ class MilkdownEditor {
         ctx.set(defaultValueCtx, defaultValue);
         ctx
           .get(listenerCtx)
-          .markdownUpdated((_, markdown) =>
-            this.saveNote(markdown)
-          );
+          .markdownUpdated((_, markdown) => this.saveNote(markdown));
       })
       // Use an empty theme here. Style it with CSS.
       .use(basic)
@@ -99,6 +98,7 @@ class MilkdownEditor {
       .use(prism)
       .use(diagram)
       .use(indent)
+      .use(menu())
       .create();
   }
 

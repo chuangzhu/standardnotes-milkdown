@@ -10,6 +10,7 @@ specifiers:
   '@milkdown/plugin-indent': ^5.5.0
   '@milkdown/plugin-listener': ^5.5.0
   '@milkdown/plugin-math': ^5.5.0
+  '@milkdown/plugin-menu': ^5.5.0
   '@milkdown/plugin-prism': ^5.5.0
   '@milkdown/plugin-slash': ^5.5.0
   '@milkdown/plugin-tooltip': ^5.5.0
@@ -37,6 +38,7 @@ dependencies:
   '@milkdown/plugin-indent': 5.5.0_ee3a878e89576bb62ebc7021836857a7
   '@milkdown/plugin-listener': 5.5.0_ee3a878e89576bb62ebc7021836857a7
   '@milkdown/plugin-math': 5.5.0_ee3a878e89576bb62ebc7021836857a7
+  '@milkdown/plugin-menu': 5.5.0_ee3a878e89576bb62ebc7021836857a7
   '@milkdown/plugin-prism': 5.5.0_ee3a878e89576bb62ebc7021836857a7
   '@milkdown/plugin-slash': 5.5.0_ee3a878e89576bb62ebc7021836857a7
   '@milkdown/plugin-tooltip': 5.5.0_ee3a878e89576bb62ebc7021836857a7
@@ -387,6 +389,18 @@ packages:
       '@types/katex': 0.11.1
       katex: 0.15.2
       remark-math: 5.1.1
+      tslib: 2.3.1
+    dev: false
+
+  /@milkdown/plugin-menu/5.5.0_ee3a878e89576bb62ebc7021836857a7:
+    resolution: {integrity: sha512-TOHuen6gBdiWRyJMvjR5J/EyBHDKnPeNd3HC9nIH0jdHavJPhgqircgGXUS336zmei9t26NrCYusiW7xdyIuSg==}
+    peerDependencies:
+      '@milkdown/core': ^5.4.0
+      '@milkdown/prose': ^5.4.0
+    dependencies:
+      '@milkdown/core': 5.5.0_@milkdown+prose@5.5.0
+      '@milkdown/prose': 5.5.0
+      '@milkdown/utils': 5.5.0_ee3a878e89576bb62ebc7021836857a7
       tslib: 2.3.1
     dev: false
 

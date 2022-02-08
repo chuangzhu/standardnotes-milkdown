@@ -3,22 +3,59 @@
 body {
   padding: 0;
   margin: 0;
+  font-family: var(--sn-stylekit-sans-serif-font);
+  color: var(--sn-stylekit-editor-foreground-color);
+  box-sizing: border-box;
+}
+
+.milkdown-menu-wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 
 .milkdown {
-  min-height: 100vh;
-  box-sizing: border-box;
   position: relative;
   background: var(--sn-stylekit-editor-background-color);
-  font-family: var(--sn-stylekit-sans-serif-font);
-  color: var(--sn-stylekit-editor-foreground-color);
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1rem;
+  overflow: auto;
 }
 
 .milkdown .editor {
   outline: none;
+  padding: 0 1rem 0 1rem;
+}
+
+/* Menu styles */
+
+.milkdown-menu {
+  background: var(--sn-stylekit-contrast-background-color) !important;
+  border-bottom: 1px solid var(--sn-stylekit-border-color);
+}
+.milkdown-menu .divider {
+  background: var(--sn-stylekit-border-color) !important;
+}
+.milkdown-menu .menu-selector-wrapper {
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+.milkdown-menu .menu-selector-wrapper:not(.fold) {
+  border-color: var(--sn-stylekit-border-color);
+}
+.milkdown-menu .menu-selector-list {
+  background: var(--sn-stylekit-contrast-background-color) !important;
+  border: 1px solid var(--sn-stylekit-border-color) !important;
+  border-bottom-left-radius: var(--sn-stylekit-general-border-radius) !important;
+  border-bottom-right-radius: var(--sn-stylekit-general-border-radius) !important;
+}
+.milkdown-menu button {
+  margin: 0 !important;
+  padding: 0.75rem !important;
+}
+.milkdown-menu .menu-selector {
+  padding: 0.75rem 1rem !important;
+}
+.milkdown-menu button:hover {
+  background: var(--sn-stylekit-secondary-contrast-background-color) !important;
 }
 
 /* Override styles for basic HTML elements */

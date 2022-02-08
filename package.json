@@ -26,6 +26,7 @@
     "@milkdown/plugin-indent": "^5.5.0",
     "@milkdown/plugin-listener": "^5.5.0",
     "@milkdown/plugin-math": "^5.5.0",
+    "@milkdown/plugin-menu": "^5.5.0",
     "@milkdown/plugin-prism": "^5.5.0",
     "@milkdown/plugin-slash": "^5.5.0",
     "@milkdown/plugin-tooltip": "^5.5.0",
